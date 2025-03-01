@@ -1,0 +1,19 @@
+{% extends 'app/layouts/base_form.html' %}
+{% load i18n l10n %}
+
+{% block article_stats %}
+    <p class="text-center">
+        {% translate 'Last updated at' %}: <span class="font-bold">{{ date }}</span>
+    </p>
+    <p>
+        {% translate 'This article has' %} {{ articles.word_count }} {% translate 'word' %}{{ articles.word_count | pluralize }}
+    </p>
+{% endblock %}
+
+{% block buttons %}
+<div class="flex justify-end">
+    <a href="{% url 'delete_article' pk=articles.id %}" class="button danger">{% translate 'Delete article' %}</a>
+    <button type="submit" class="button primary">{% translate 'Save' %}</button>
+</div>
+{% endblock buttons %}
+    

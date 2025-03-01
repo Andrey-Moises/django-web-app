@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% load widget_tweaks allauth account i18n %}
+
+{% block base_content %}
+    <main class="max-w-lg mx-auto mt-10">
+        <div class="flex flex-col bg-gray-800 text-white p-6 lg:p-16 rounded-md" >
+            <div class="flex flex-col text-center">
+                <h1 class="text-xl md:text-2xl lg:text-3xl font-semibold">{% translate 'Sign into your account' %}</h1>
+                <p class="text-sm mt-1 mb-3">{% translate 'Or' %} <a class="font-bold hover:underline" href="{{ signup_url }}">{% translate 'sign up instead?' %}</a></p>
+            </div>
+            <form method="POST" class="space-y-6 mb-4" action="{% url 'account_login' %}">
+                {% csrf_token %}
+                {% if form.errors %}
+                    {% for field, error in form.errors.items %}
+                        <div class="p-2 my-2 text-sm text-red-700 bg-red-300 rounded-md border">
+                            {{error}}
+                        </div>
+                    {% endfor %}
+                {% endif %}
+
+                <div>
+                    <label class="sr-only" for="{{ form.login.id_for_label }}">{% translate 'Email' %}</label>
+                    <div class="form-field">
+                        {% render_field form.login %}
+                    </div>
+                </div>
+
+                <div>
+                    <label class="sr-only" for="{{ form.password.id_for_label }}">{% translate 'Password' %}</label>
+                    <div class="form-field">
+                        {% render_field form.password %}
+                    </div>
+                </div>
+
+                <div class="flex items-center">
+                    {% render_field form.remember class="focus:ring-emerald-500 h-4 w-4 text-emerald-600 border-gray-300 rounded-sm" %}
+                    <label class="ml-3 text-sm"  for="{{ form.remember.id_for_label }}">
+                        {{form.remember.label}}
+                    </label>
+                </div>
+
+                <button type="submit" class="button primary w-full text-sm">{% translate 'Sign in' %}</button>
+
+                {% if SOCIALACCOUNT_ENABLED %}
+                    {% include 'socialaccount/snippets/login.html' with page_layout="entrance" %}
+                {% endif %}
+
+            </form>
+        </div>
+    </main>
+{% endblock base_content %}

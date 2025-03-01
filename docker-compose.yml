@@ -1,0 +1,40 @@
+name: djangocourse-local
+services:
+  db:
+    image: postgres:17
+    env_file:
+      - ./.env.docker
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: pg_isready -d $$POSTGRES_DB -U $$POSTGRES_USER  # Usa la sintaxis correcta
+      interval: 10s
+      timeout: 1m
+      retries: 5
+      start_period: 30s
+    ports:
+      - "5432:5432"
+    networks:
+      - my-network
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    init: true
+    volumes:
+      - .:/code
+    env_file:
+      - ./.env.docker
+    restart: unless-stopped
+    depends_on:
+      db:
+        condition: service_healthy
+    ports:
+      - "8000:8000"
+    networks:
+      - my-network
+volumes:
+  postgres_data:
+networks:
+  my-network:
+    driver: bridge

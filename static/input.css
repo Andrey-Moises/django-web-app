@@ -1,0 +1,110 @@
+@import "tailwindcss";
+
+.button {
+  @apply font-medium px-4 py-2 rounded-md;
+}
+
+.primary {
+  @apply shadow-sm border border-emerald-700 text-white bg-emerald-600 hover:bg-emerald-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-emerald-500;
+}
+
+.secondary {
+  @apply border border-gray-300 text-gray-700 bg-gray-100 hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500;
+}
+
+.danger {
+  @apply shadow-sm border border-red-400 text-red-800 bg-red-200 hover:bg-red-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-200;
+}
+
+.EasyMDEContainer, textarea {
+  @apply rounded-md border-gray-200 border-2 text-base leading-6;
+}
+
+.EasyMDEContainer .CodeMirror {
+  @apply !border-none !bg-inherit;
+}
+
+.EasyMDEContainer:has(textarea:focus), textarea:focus {
+  @apply ring-1 ring-emerald-500 border-emerald-500;
+}
+
+.error {
+  @apply p-2 my-2 text-sm text-red-700 bg-red-50 rounded-md border-red-300 border;
+}
+
+details > summary::-webkit-details-marker {
+  display: none;
+}
+
+input[type="radio"] {
+  @apply text-emerald-600 ml-1 h-4 w-4 focus:ring-emerald-500;
+}
+
+.allauth-form input[type="email"] {
+  @apply w-full rounded-md text-black bg-white;
+}
+
+.allauth-form p:has(input[type="email"]) {
+  @apply text-left;
+}
+
+.allauth-form p:has(input[type="email"]) label {
+  @apply font-bold;
+}
+
+.hover\:shadow-underline:hover {
+  position: relative;
+}
+
+.hover\:shadow-underline:hover::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: -2px;
+  left: 0;
+  background: currentColor;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  animation: underline 0.3s ease;
+}
+
+@keyframes underline {
+  from { width: 0 }
+  to { width: 100% }
+}.hover\:shadow-underline:hover {
+  position: relative;
+}
+
+.hover\:shadow-underline:hover::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: -2px;
+  left: 0;
+  background: currentColor;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  animation: underline 0.3s ease;
+}
+
+@keyframes underline {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+.form-field input{
+  @apply block text-black shadow-sm focus:ring-emerald-500 focus:border-emerald-500 border-gray-300 rounded-md text-sm bg-white p-2 w-full;
+}
+
+.article-status-draft {
+  @apply bg-gray-200;
+}
+
+.article-status-published {
+  @apply bg-green-200;
+}
+
+.article-status-inprogress {
+  @apply bg-amber-200;
+}
+

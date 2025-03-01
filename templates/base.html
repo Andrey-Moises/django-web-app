@@ -1,0 +1,91 @@
+{% load static i18n %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Andrey{% endblock title %}</title>
+    <link rel="stylesheet" href="{% static 'output.css' %}">                                   {# Tailwind CSS #}
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/easymde/dist/easymde.min.css">   {# EasyMDE #}
+    <script src="https://cdn.jsdelivr.net/npm/easymde/dist/easymde.min.js"></script>           {# EasyMDE #}
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.14.8/dist/cdn.min.js"></script> {# Alpine JS #}
+    {% block extra_head %}
+    {% endblock extra_head %}
+</head>
+
+<body>
+        {% block body %}
+
+        {% url 'create_article' as create_new_url %}
+        {% url 'home' as home_url %}
+        {% url 'account_email' as account_email_url %}
+
+        <nav class="px-10 py-4 border-b border-gray-300 shadow-md">
+            <div class="flex justify-end items-center gap-6 max-w-7xl mx-auto">
+
+                {% if user.is_authenticated %}
+                
+                    <a href="
+                        {% spaceless %}
+                            {% if request.path != create_new_url %}
+                                {{ create_new_url }}
+                            {% else %}
+                                #
+                            {% endif %}
+                        {% endspaceless %}
+                    " 
+                    class="
+                        button primary 
+                        {% if request.path == home_url %}
+                            font-semibold
+                        {% endif %}
+                    ">
+                        {% translate 'Create article' %}
+                    </a>
+                    <a class="
+                    hover:shadow-underline 
+                    {% if request.path == home_url %}
+                        font-semibold
+                    {% endif %}
+                    " 
+                    href="{{ home_url }}">
+                        {% translate 'Articles' %}
+                    </a>
+                    <a class="
+                    hover:shadow-underline
+                    {% if request.path == account_email_url %}
+                        font-semibold
+                    {% endif %}
+                    " 
+                    href="{{ account_email_url }}">
+                        {% translate 'Change email' %}
+                    </a>
+                    <form method="POST" action="{% url 'account_logout' %}">
+                        {% csrf_token %}
+                        <button class="hover:shadow-underline" type="submit" class="button">{% translate 'Log out' %}</button>
+                    </form>
+
+                {% else %}
+
+                    <a class="button secondary text-sm" href="{% url 'account_login' %}">Log in</a>
+                    <a class="button primary text-sm" href="{% url 'account_signup' %}">Sign up</a>
+
+                {% endif %}
+            </div>
+        </nav>
+        <div class="p-2 md:p-4 lg:p-6">
+            {% block base_content %}
+            {% endblock base_content %}
+        </div>
+{% endblock body %}
+    {% block extra_body %}
+    {% endblock extra_body %}
+
+    <!-- <footer>Andrey Moises - Mexico 🌮</footer> -->
+
+    {% block page_js %}
+    {% endblock page_js %}
+    
+</body>
+</html>

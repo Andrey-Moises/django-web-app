@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% load i18n %}
+
+{% block base_content %}
+<main class="max-w-2xl mx-auto flex flex-col items-center mt-10">
+    <h1 class="subtitle mb-2">{% translate 'Delete article' %}</h1>
+    <p class="text-lg mb-6">{% translate 'Are you sure you want to delete' %} "{{ articles.title }}"?</p>
+    <form method="POST" class="flex items-center gap-4">
+        {% csrf_token %}
+        <button type="submit" class="button danger">{% translate 'Delete' %}</button>
+        <a href="{% url 'home' %}" class="button secondary"> {% include 'svgs/arrow.svg' with class="inline-block w-4 h-4 mr-2" %} {% translate 'No, take me back' %}</a>
+    </form>
+</main>
+{% endblock base_content %}

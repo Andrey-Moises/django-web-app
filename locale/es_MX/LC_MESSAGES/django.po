@@ -1,0 +1,192 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-02-26 22:34+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: app/managers.py:9
+msgid "The Email field must be set"
+msgstr "Se debe ingresar el campo de correo electrónico"
+
+#: app/models.py:9
+msgid "draft"
+msgstr "borrador"
+
+#: app/models.py:10
+msgid "in progress"
+msgstr "en progreso"
+
+#: app/models.py:11
+msgid "published"
+msgstr "publicado"
+
+#: app/models.py:17
+msgid "email address"
+msgstr "dirección de correo electrónico"
+
+#: app/models.py:33
+msgid "article"
+msgstr "articulo"
+
+#: app/models.py:34
+msgid "articles"
+msgstr "articulos"
+
+#: app/models.py:36
+msgid "title"
+msgstr "titulo"
+
+#: app/models.py:37
+msgid "content"
+msgstr "contenido"
+
+#: app/models.py:38
+msgid "word count"
+msgstr "conteo de palabras"
+
+#: app/models.py:39
+msgid "twitter post"
+msgstr "post de twitter"
+
+#: app/models.py:40
+msgid "status"
+msgstr "estado"
+
+#: app/models.py:44
+msgid "created at"
+msgstr "creado en"
+
+#: app/models.py:45
+msgid "updated at"
+msgstr "actualizado en"
+
+#: app/models.py:47
+msgid "creator"
+msgstr "creador"
+
+#: app/views.py:54
+#, python-format
+msgid "You have created %(article_count)s article"
+msgid_plural "You have created %(article_count)s articles"
+msgstr[0] "Has creado %(article_count)s artículo"
+msgstr[1] "Has creado %(article_count)s artículos"
+
+#: app/views.py:60
+#, python-format
+msgid "and written %(written_words)s word"
+msgid_plural "and written %(written_words)s words"
+msgstr[0] "y escrito %(written_words)s palabra"
+msgstr[1] "y escrito %(written_words)s palabras"
+
+#: templates/app/base.html:39
+msgid "Create article"
+msgstr "Crear Artículo"
+
+#: templates/app/base.html:48
+msgid "Articles"
+msgstr "Articulos"
+
+#: templates/app/base.html:57
+msgid "Change email"
+msgstr "Cambiar correo electrónico"
+
+#: templates/app/base.html:61
+msgid "Log out"
+msgstr "Cerrar sesión"
+
+#: templates/app/create_article.html:5
+msgid "Create"
+msgstr "Crear"
+
+#: templates/app/delete_article.html:6 templates/app/update_article.html:14
+msgid "Delete article"
+msgstr "Eliminar artículo"
+
+#: templates/app/delete_article.html:7
+msgid "Are you sure you want to delete"
+msgstr "Estas seguro que deseas eliminar"
+
+#: templates/app/delete_article.html:10
+msgid "Delete"
+msgstr "Eliminar"
+
+#: templates/app/delete_article.html:11
+msgid "No, take me back"
+msgstr "Regresar"
+
+#: templates/app/home.html:7
+msgid "Welcome"
+msgstr "Bienvenido"
+
+#: templates/app/home.html:13
+msgid "Create Article"
+msgstr "Crear Artículo"
+
+#: templates/app/home.html:15
+msgid "Your articles"
+msgstr "Tus artículos"
+
+#: templates/app/home.html:28
+msgid "words"
+msgstr "palabras"
+
+#: templates/app/home.html:30 templates/app/update_article.html:9
+msgid "word"
+msgstr "palabra"
+
+#: templates/app/layouts/base_form.html:5
+msgid "Write a title for your article"
+msgstr "Escribe un título para tu artículo"
+
+#: templates/app/update_article.html:6
+msgid "Last updated at"
+msgstr "Última actualización en"
+
+#: templates/app/update_article.html:9
+msgid "This article has"
+msgstr "Este artículo tiene"
+
+#: templates/app/update_article.html:15
+msgid "Save"
+msgstr "Guardar"
+
+#~ msgid "Title"
+#~ msgstr "Titulo"
+
+#~ msgid "Hello"
+#~ msgstr "Hola"
+
+#~ msgid "inprogress"
+#~ msgstr "en progreso"
+
+#~ msgid "INPROGRESS"
+#~ msgstr "EN PROGRESO"
+
+#~ msgid "Edit article"
+#~ msgstr "Editar artículo"
+
+#~ msgid "Back to list"
+#~ msgstr "Volver al listado"
+
+#~ msgid "Words"
+#~ msgstr "Palabras"
+
+#~ msgid "Word"
+#~ msgstr "Palabra"
+
+#~ msgid "Update Article"
+#~ msgstr "Actualizar Artículo"
