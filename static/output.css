@@ -2904,4 +2904,29 @@ input[type="radio"] {
 }
 @property --tw-backdrop-sepia {
   syntax: "*";
-  inherits: f
+  inherits: false;
+}
+@property --tw-duration {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-ease {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-contain-size {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-contain-layout {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-contain-paint {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-contain-style {
+  syntax: "*";
+  inherits: false;
+}
